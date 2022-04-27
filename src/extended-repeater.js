@@ -15,7 +15,15 @@ const { NotImplementedError } = require('../extensions/index.js');
  * => 'STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS'
  *
  */
-function repeater(/* str, options */) {
+function repeater(str, obj) {
+//   function getCopyString(str, sep, qty) {
+//     let result = [];
+//     for(let i=0; i<qty; i++) {
+//         result.push(str)
+//     }
+//     return result.join(sep);
+// }
+// return getCopyString((str + getCopyString(obj.addition, obj.additionSeparator, obj.additionRepeatTimes)), obj.separator, obj.repeatTimes);
   throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
 }
