@@ -16,16 +16,19 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function repeater(str, obj) {
-//   function getCopyString(str, sep, qty) {
-//     let result = [];
-//     for(let i=0; i<qty; i++) {
-//         result.push(str)
-//     }
-//     return result.join(sep);
-// }
-// return getCopyString((str + getCopyString(obj.addition, obj.additionSeparator, obj.additionRepeatTimes)), obj.separator, obj.repeatTimes);
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  function getCopyString(str, sep, qty) {
+    str = isFinite(str) ? String(str) : str;
+    let result = [];
+    for(let i = 0; i < qty; i++) {
+        result.push(str);
+    }
+    return result.join(sep);
+  }
+  let additionStr = getCopyString(obj.addition, obj.additionSeparator || '|', obj.additionRepeatTimes || 1);
+  let resultStr = getCopyString((str + additionStr), obj.separator || '+', obj.repeatTimes || 1);
+
+  return resultStr;
+  // throw new NotImplementedError('Not implemented');
 }
 
 module.exports = {
